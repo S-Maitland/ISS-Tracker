@@ -8,7 +8,14 @@
       <!-- <button type="button" class="btn-close btn-right" @click="closeModal" aria-label="Close modal">x
       </button> -->
       <!-- <ModelButtonOne :buttonone="contentone"/> -->
-
+      <div id="buttonOne">
+        <ModalButtonOne/>
+        <!-- <button type="button" class="btn" @click="showModal">
+          Open Modal!
+        </button>
+        <modal v-show="isModalVisible" @close="closeModal" />
+      </div> -->
+    </div>
 
 
   </div>
@@ -17,7 +24,7 @@
 
 <script>
 
-import ModalButtonOne from '@/components/ModalComponentOne';
+import ModalButtonOne from '@/components/ModalButtonOne';
 
 export default {
   components: {

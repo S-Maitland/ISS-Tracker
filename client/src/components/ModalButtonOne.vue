@@ -12,7 +12,7 @@ import ModalComponentOne from '@/components/ModalComponentOne';
 
 export default {
   // props: ['contentone'],
-  components: { ModalComponentOne }
+  components: { ModalComponentOne },
   data() {
     return {
       isModalVisible: false
