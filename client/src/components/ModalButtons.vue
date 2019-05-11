@@ -77,22 +77,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* #modalButtons {
-  display: flex;
-  /* flex-direction: column; */
-    /* align-content: space-evenly;
-}
-#modal1 {
-  display:flex;
-  justify-content: flex-end;
-}
-#modal2 {
-  display:flex;
-  justify-content: flex-end;
+ #modalButtons {
+   display: flex;
+   justify-content: space-between;
 
-}
-#modal3 {
-  display:flex;
-  justify-content: flex-end;
-} */ 
+ }
 </style>
