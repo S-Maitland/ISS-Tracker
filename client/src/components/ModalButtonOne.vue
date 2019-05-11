@@ -3,11 +3,12 @@
   <button type="button" class="btn" @click="showModal">
     Open Modal!
   </button>
-  <modal v-show="isModalVisible" @close="closeModal" />
+  <modal name="bar" v-show="isModalVisible" @close="closeModal" />
 </div>
 </template>
 
 <script>
+import {eventBus } from '@/main.js'
 import ModalComponentOne from '@/components/ModalComponentOne';
 
 export default {
@@ -25,6 +26,11 @@ export default {
     closeModal() {
       this.isModalVisible = false;
     }
+  },
+  mounted() {
+    eventBus.$on('close', () => {
+      this.isModalVisible = false
+    })
   }
 }
 </script>

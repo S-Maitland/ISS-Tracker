@@ -1,25 +1,10 @@
 <template lang="html">
   <div id="app">
-    <!-- <div id="component1">
-      <button type="button" class="btn" @click="showModal">
-        Open Modal!
-      </button>
-      <modal v-show="isModalVisible" @close="closeModal" /> -->
-      <!-- <button type="button" class="btn-close btn-right" @click="closeModal" aria-label="Close modal">x
-      </button> -->
-      <!-- <ModelButtonOne :buttonone="contentone"/> -->
-      <div id="buttonOne">
-        <ModalButtonOne/>
-        <!-- <button type="button" class="btn" @click="showModal">
-          Open Modal!
-        </button>
-        <modal v-show="isModalVisible" @close="closeModal" />
-      </div> -->
-    </div>
+    <ModalButtonOne />
+
 
 
   </div>
-
 </template>
 
 <script>
@@ -50,7 +35,8 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
-    }
+    },
+
 
   },
 
@@ -59,9 +45,11 @@ export default {
     .then(response => response.json())
     .then(location => this.location = location);
 
-    fetch('http://localhost:3000/api/messages/')
-    .then(response => response.json())
-    .then(messages => this.messages = messages);
+    // fetch('http://localhost:3000/api/messages/')
+    // .then(response => response.json())
+    // .then(messages => this.messages = messages);
+
+  
   }
 }
 

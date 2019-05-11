@@ -37,12 +37,13 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
 export default {
   name: 'modal',
 
   methods: {
     close() {
-      this.$emit('close');
+      eventBus.$emit('close');
     },
   },
 };
