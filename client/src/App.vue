@@ -18,13 +18,30 @@ export default {
 </script>
 
 <style>
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  margin-top: 5vh;
+}
+#view {
+  height: 100%;
+}
+
+h1 {
+  /* height: 5vh; */
+  margin: 0;
+  padding: 5vh;
+  background-color: #000024;
+  color: white;
 }
 
 </style>

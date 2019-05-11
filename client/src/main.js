@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 
 import VModal from 'vue-js-modal'
 
-Vue.use(VModal)
+Vue.use(VModal, {componentName: "modal"})
 
 export const eventBus = new Vue();
 
