@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="Header">
-    <h1>{{text}}</h1>
+    <h1 id="header">{{text}}</h1>
   </div>
 </template>
 
@@ -11,4 +11,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#header {
+  text-align: center;
+}
 </style>
