@@ -2,36 +2,37 @@
 <div id="modalButtons">
 
   <div id ="modal1">
-    <ModalComponentOne v-if="isModalVisible"/>
-    <button type="button" class="btn" @click="showModal">
+    <ModalComponentOne v-bind:crew="crew" v-if="isModalVisible"/>
+    <button type="button" class="modal-btn" @click="showModal">
       Open Modal!
     </button>
-    <modal name="bar" v-show="isModalVisible"  />
+    <modal v-bind:crew="crew"  class="modal" name="bar" v-show="isModalVisible" value="yo!" />
   </div>
 
 
   <div id="modal2">
-    <ModalComponentTwo v-if="isModalVisible2"/>
-    <button type="button" class="btn" @click="showModal2">
+    <ModalComponentTwo v-bind:info="info" v-if="isModalVisible2"/>
+    <button type="button" class="modal-btn" @click="showModal2(); timerVelocity();">
       Modal Two!
     </button>
-    <modal name="bar" v-show="isModalVisible2"  />
+    <modal class="modal" name="bar" v-show="isModalVisible2"  />
   </div>
 
 
 <div id="modal3">
   <ModalComponentThree v-if="isModalVisible3"/>
-  <button type="button" class="btn" @click="showModal3">
+  <button type="button" class="modal-btn" @click="showModal3">
     Modal Three!
   </button>
-  <modal name="bar" v-show="isModalVisible3"  />
+  <modal class="modal" name="bar" v-show="isModalVisible3"  />
 </div>
 </div>
 
 </template>
 
 <script>
-import {eventBus } from '@/main.js'
+import axios from 'axios';
+import {eventBus } from '@/main.js';
 import ModalComponentOne from '@/components/ModalComponentOne';
 import ModalComponentTwo from '@/components/ModalComponentTwo';
 import ModalComponentThree from '@/components/ModalComponentThree';
@@ -43,11 +44,15 @@ export default {
     ModalComponentTwo,
     ModalComponentThree
   },
+
   data() {
     return {
       isModalVisible: false,
       isModalVisible2: false,
-      isModalVisible3: false
+      isModalVisible3: false,
+      crew: [],
+      info: {},
+      timer: null
     }
   },
   methods: {
@@ -61,7 +66,27 @@ export default {
       this.isModalVisible3 = true;
     },
 
+
+    updateVelocity() {
+      axios.get('https://api.wheretheiss.at/v1/satellites/25544')
+      .then(info => this.info = info)
+    },
+
+    // timerVelocity() {
+    //   this.updateVelocity();
+    //   setInterval(() => this.updateVelocity(), 1000);
+    // }
+
+    timerVelocity() {
+      this.updateVelocity()
+      this.timer = setInterval(() => this.updateVelocity(), 1000);
+    }
+
   },
+  created() {
+
+  },
+
   mounted() {
     eventBus.$on('close', () => {
       this.isModalVisible = false
@@ -71,15 +96,28 @@ export default {
     }),
     eventBus.$on('close3', () => {
       this.isModalVisible3 = false
-    })
+    }),
+
+    fetch('http://api.open-notify.org/astros.json')
+    .then(response => response.json())
+    .then(crew => this.crew = crew);
+
+    // fetch('https://api.wheretheiss.at/v1/satellites/25544')
+    // .then(response => response.json())
+    // .then(info => this.info = info);
+
+    eventBus.$on('closeTimer', () => {
+      clearInterval(this.timer)
+
+    });
   }
 }
 </script>
 
 <style lang="css" scoped>
- #modalButtons {
-   display: flex;
-   justify-content: space-between;
 
+
+ .modal-btn {
+   margin-top: 20vh;
  }
 </style>

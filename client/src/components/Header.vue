@@ -13,5 +13,6 @@ export default {
 <style lang="css" scoped>
 #header {
   text-align: center;
+  /* position: fixed; */
 }
 </style>
