@@ -71,7 +71,7 @@ export default {
   #form-container {
     display: flex;
     flex-direction: column;
-    
+
   }
 
   #messageList {
