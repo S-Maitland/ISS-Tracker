@@ -1,13 +1,13 @@
 <template lang="html">
   <div class="">
     <template lang="html">
-    <form class="" v-on:submit="" method="post">
+    <form class="" v-on:submit="addMessage" method="post">
 
       <label for="name">Name:</label>
-      <input type="text" id="name"  required/>
+      <input type="text" id="name" v-model="name" required/>
 
       <label for="age">Age:</label>
-      <input type="number" id="age"  required/>
+      <input type="number" id="age" v-model="age" required/>
 
       <label for="country_select">Country:</label>
         <select id="country_select" v-model="selectedCountry">
@@ -16,7 +16,7 @@
         </select>
 
       <label for="message">Message:</label>
-      <input type="text" id="message"  required/>
+      <input type="text" id="Your Message:" v-model="message" required/>
 
       <input type="submit" value="Send Message!" id="save"/>
     </form>
@@ -27,29 +27,30 @@
 <script>
 
 import MessageService from '@/services/MessageService.js'
-
+import { eventBus } from '@/main.js'
 
 export default {
   name: 'input-form',
   data () {
     return {
-    countries:[],
-    name: "",
-    age: null,
-    selectedCountry: null,
-    message: ""
+      countries:[],
+      name: "",
+      age: null,
+      selectedCountry: null,
+      message: ""
     }
   },
   methods: {
   addMessage(form){
     form.preventDefault()
-    const message = {
+    const messageToAstronaut = {
       name: this.name,
       age: this.age,
-      selectedCountry: this.selectedCountry,
+      selectedCountryName: this.selectedCountry.name,
+      selectedCountryFlag: this.selectedCountry.flag,
       message: this.message
       }
-    MessageService.postMessage(message)
+    MessageService.postMessage(messageToAstronaut)
     .then(res => eventBus.$emit('message-added', res))
     }
   },
