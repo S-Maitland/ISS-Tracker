@@ -8,7 +8,7 @@
       <div id="map-container">
         <MapView id="mapView" />
       </div>
-        <ModalButtons id="buttonsContainer" />
+      <ModalButtons id="buttonsContainer" />
     </div>
   </div>
 </template>
@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  #map-container {
+    height: 180px;
+  }
 
   #container {
     border: 5px solid green;
@@ -59,10 +62,10 @@ export default {
   }
 
   #container > * {
-  padding: 10px;
-  /* flex: 2 100%; */
-  border: 2px solid blue;
-}
+    padding: 10px;
+    /* flex: 2 100%; */
+    border: 2px solid blue;
+  }
 
   #buttonsContainer {
     border: 2px solid blue;
@@ -71,7 +74,7 @@ export default {
   #form-container {
     display: flex;
     flex-direction: column;
-    
+
   }
 
   #messageList {
@@ -104,19 +107,19 @@ export default {
 
 
   @media all and (min-width: 20vw) {
-  #form-container { flex: 1 0 0; }
-}
-@media all and (min-width: 20vw) {
-#buttonsContainer { flex: 1 0 0; }
-}
+    #form-container { flex: 1 0 0; }
+  }
+  @media all and (min-width: 20vw) {
+    #buttonsContainer { flex: 1 0 0; }
+  }
 
-@media all and (min-width: 40vw) {
-  #map-container    { flex: 4 0px; }
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
-  .footer  { order: 4; }
-}
+  @media all and (min-width: 40vw) {
+    #map-container    { flex: 4 0px; }
+    .aside-1 { order: 1; }
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; }
+  }
 
 
 </style>
