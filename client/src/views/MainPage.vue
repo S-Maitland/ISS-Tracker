@@ -9,6 +9,9 @@
         <MapView id="mapView" />
       </div>
       <ModalButtons id="buttonsContainer" />
+      <div id="buttons-container">
+        <ModalButtons id="buttons" />
+      </div>
     </div>
   </div>
 </template>
@@ -36,6 +39,8 @@ export default {
     .then(response => response.json())
     .then(location => this.location = location);
 
+
+
     // fetch('http://localhost:3000/api/messages/')
     // .then(response => response.json())
     // .then(messages => this.messages = messages);
@@ -54,11 +59,7 @@ export default {
     display: flex;
     height: 100%;
     flex-wrap: row wrap;
-    /* justify-content: space-between; */
-
-    /* flex-direction: row; */
     text-align: center;
-
   }
 
   #container > * {
@@ -67,14 +68,20 @@ export default {
     border: 2px solid blue;
   }
 
-  #buttonsContainer {
+  #buttons-container {
+    border: 3px solid black;
+  }
+
+  #buttons {
     border: 2px solid blue;
+    height: 100%;
+
   }
 
   #form-container {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-around;
   }
 
   #messageList {
@@ -91,10 +98,10 @@ export default {
     /* align-self: flex-start; */
   }
 
-  #mapContainer {
+  #map-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
   }
 
   #mapView {
@@ -120,6 +127,16 @@ export default {
     .aside-2 { order: 3; }
     .footer  { order: 4; }
   }
+  #form-container { flex: 1 0 0; }
+@media all and (min-width: 20vw) {
+#buttons-container { flex: 1 0 0; }
+}
 
-
+@media all and (min-width: 40vw) {
+  #map-container    { flex: 4 0px; }
+  .form-container { order: 1; }
+  .map-container   { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
 </style>

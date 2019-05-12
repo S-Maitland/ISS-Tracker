@@ -3,12 +3,12 @@
      <div class="modal">
        <header class="modal-header">
          <slot name="header">
-           This is modal two!!!
+            Here we can see some fun info about the ISS!!
 
            <button
              type="button"
              class="btn-close"
-             @click="close"
+             @click="close(); stopTimer();"
            >
              x
            </button>
@@ -16,7 +16,8 @@
        </header>
        <section class="modal-body">
          <slot name="body">
-           This is modal 2!
+           <p>The ISS is currently <b>{{info.data.altitude.toFixed(2)}} km</b> above  us and travelling at a breathtaking <b>{{info.data.velocity.toFixed(2)}} km/h</b>!!!</p>
+           <p>As it orbits around the Earth, it goes through periods of day and night just like the rest of us!  At the moment, the ISS is in<b v-if="info.data.visibility === eclipsed"> pitch black</b><b v-else> daylight</b> !!!</p>
          </slot>
         </section>
         <footer class="modal-footer">
@@ -26,7 +27,7 @@
              <button
                type="button"
                class="btn-green"
-               @click="close"
+               @click="close(); stopTimer();"
              >
                Close me!
            </button>
@@ -39,12 +40,17 @@
 <script>
 import { eventBus } from '@/main.js'
 export default {
-  name: 'modal',
-
+  name: 'modal2',
+  props: ['info'],
   methods: {
     close() {
       eventBus.$emit('close2');
+      // console.log('stoppedtwo');
     },
+    stopTimer() {
+      eventBus.$emit('closeTimer');
+      console.log('stoppedtwo');
+    }
   },
 };
 </script>
@@ -69,6 +75,8 @@ export default {
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+    height: 90vh;
+    width: 90vw;
   }
 
   .modal-header,
