@@ -98,6 +98,7 @@ export default {
   align-items: center;
   margin: 0 auto;
   padding: 0px;
+  z-index: 1;
   /* justify-content: center; */
 }
 
