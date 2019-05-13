@@ -60,33 +60,33 @@ export default {
 #container > * {
   padding: 10px;
   /* flex: 2 100%; */
-  border: 2px solid blue;
 }
 
 #buttons-container {
-  border: 3px solid black;
+  margin: 0 auto;
+  padding: 0px;
 }
 
 #buttons {
   border: 2px solid blue;
   height: 100%;
-
 }
 
 #form-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 0 auto;
+  padding: 0px;
 }
 
 #messageList {
-  border: 1px solid blue;
   /* width: 10vw; */
   height: 80vh;
+  border: solid 1px black;
 }
 
 #inputForm {
-  border: 1px solid red;
   width: 10vw;
   height: 10vh;
 
@@ -96,11 +96,12 @@ export default {
 #map-container {
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  padding: 0px;
   /* justify-content: center; */
 }
 
 #mapView {
-  border: 1px solid black;
   /* width: 10vw;
   height: 10vh; */
   /* flex-grow: 2; */
