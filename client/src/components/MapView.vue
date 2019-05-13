@@ -40,8 +40,7 @@ export default {
 
 <style lang="css" scoped>
 .map {
-  height: 60vh;
+  height: 100%;
   width: 100%;
-
 }
 </style>
