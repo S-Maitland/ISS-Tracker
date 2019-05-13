@@ -19,6 +19,7 @@ import {icon} from 'leaflet';
 
 export default {
   name: 'issMap',
+  props: ['location'],
   components: {
     LMap,
     LTileLayer,
@@ -27,13 +28,14 @@ export default {
   data() {
     return {
       zoom: 16,
-      center: L.latLng(55.8653028,-4.2600128),
+      center: L.latLng(this.location.iss_position.latitude,this.location.iss_position.longitude),
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
       '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      marker: L.latLng(55.8653028,-4.2600128)
-    };
+      marker:[ L.latLng(this.location.iss_position.latitude,this.location.iss_position.longitude)
+      ]
+    }
     }
   }
 </script>

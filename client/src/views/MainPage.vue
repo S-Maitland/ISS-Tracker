@@ -6,7 +6,7 @@
         <InputForm id="inputForm" />
       </div>
       <div id="map-container">
-        <MapView id="mapView" />
+        <MapView id="mapView" :location="location" v-if="location"/>
       </div>
       <div id="buttons-container">
         <ModalButtons id="buttons" />
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      location: [],
+      location: null,
     }
   },
 
