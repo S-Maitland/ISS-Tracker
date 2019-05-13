@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="input-form">
     <template lang="html">
     <form class="" v-on:submit="addMessage" method="post">
 

@@ -81,8 +81,8 @@ export default {
 
   #messageList {
     border: 1px solid blue;
-    width: 10vw;
-    height: 10vh;
+    /* width: 10vw; */
+    height: 80vh;
   }
 
   #inputForm {
