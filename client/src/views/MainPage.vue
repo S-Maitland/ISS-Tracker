@@ -2,7 +2,8 @@
   <div id="app">
     <div id="container">
       <div id="form-container">
-        <MessageList id="messageList" />
+        <!-- <MessageList id="messageList" /> -->
+        <MessageModalButton id="messageModal" />
         <FormModalButton id="inputForm" />
       </div>
       <div id="map-container">
@@ -20,11 +21,12 @@
 import ModalButtons from '@/components/ModalButtons';
 import FormModalButton from '@/components/FormModalButton';
 import MessageList from '@/components/MessageList';
+import MessageModalButton from '@/components/MessageModalButton'
 import MapView from '@/components/MapView';
 
 export default {
   components: {
-    ModalButtons, FormModalButton, MessageList, MapView
+    ModalButtons, FormModalButton, MessageList, MessageModalButton, MapView
   },
   data() {
     return {
@@ -50,7 +52,7 @@ export default {
 <style lang="css" scoped>
 
 #container {
-  border: 5px solid green;
+
   display: flex;
   height: 100%;
   flex-wrap: row wrap;
@@ -65,10 +67,11 @@ export default {
 #buttons-container {
   margin: 0 auto;
   padding: 0px;
+  background-color: #000024;
 }
 
 #buttons {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 100%;
 }
 
@@ -78,6 +81,7 @@ export default {
   justify-content: space-around;
   margin: 0 auto;
   padding: 0px;
+  background-color: #000024;
 }
 
 #messageList {
@@ -86,8 +90,13 @@ export default {
   border: solid 1px black;
 }
 
+#messageModal {
+  height: 10vh;
+
+}
+
 #inputForm {
-  width: 10vw;
+
   height: 10vh;
 
   /* align-self: flex-start; */
@@ -106,15 +115,15 @@ export default {
   /* width: 10vw;
   height: 10vh; */
   /* flex-grow: 2; */
-
+  background-color: #000024;
 }
 
 
 @media all and (min-width: 20vw) {
-  #form-container { flex: 1 0 0; }
+  #form-container { flex: 0.6 0 0; }
 }
 @media all and (min-width: 20vw) {
-  #buttonsContainer { flex: 1 0 0; }
+  #buttons-container { flex: 0.6 0 0; }
 }
 
  @media all and (min-width: 40vw) {
