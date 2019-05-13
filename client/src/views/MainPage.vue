@@ -3,10 +3,10 @@
     <div id="container">
       <div id="form-container">
         <MessageList id="messageList" />
-        <InputForm id="inputForm" />
+        <FormModalButton id="inputForm" />
       </div>
       <div id="map-container">
-        <MapView id="mapView" />
+        <MapView id="mapView" :location="location" v-if="location"/>
       </div>
       <div id="buttons-container">
         <ModalButtons id="buttons" />
@@ -18,18 +18,17 @@
 <script>
 
 import ModalButtons from '@/components/ModalButtons';
-import InputForm from '@/components/InputForm';
+import FormModalButton from '@/components/FormModalButton';
 import MessageList from '@/components/MessageList';
 import MapView from '@/components/MapView';
 
 export default {
   components: {
-    ModalButtons, InputForm, MessageList, MapView
+    ModalButtons, FormModalButton, MessageList, MapView
   },
   data() {
     return {
-      messages: [],
-      location: [],
+      location: null,
     }
   },
 
@@ -50,79 +49,79 @@ export default {
 
 <style lang="css" scoped>
 
-  #container {
-    border: 5px solid green;
-    display: flex;
-    height: 100%;
-    flex-wrap: row wrap;
-    text-align: center;
-  }
-
-  #container > * {
-  padding: 10px;
-  /* flex: 2 100%; */
-  border: 2px solid blue;
+#container {
+  border: 5px solid green;
+  display: flex;
+  height: 100%;
+  flex-wrap: row wrap;
+  text-align: center;
 }
 
-  #buttons-container {
-    border: 3px solid black;
-  }
+#container > * {
+  padding: 10px;
+  /* flex: 2 100%; */
+}
 
-  #buttons {
-    border: 2px solid blue;
-    height: 100%;
+#buttons-container {
+  margin: 0 auto;
+  padding: 0px;
+}
 
-  }
+#buttons {
+  border: 2px solid blue;
+  height: 100%;
+}
 
-  #form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
+#form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0px;
+}
 
-  #messageList {
-    border: 1px solid blue;
-    width: 10vw;
-    height: 10vh;
-  }
+#messageList {
+  /* width: 10vw; */
+  height: 80vh;
+  border: solid 1px black;
+}
 
-  #inputForm {
-    border: 1px solid red;
-    width: 10vw;
-    height: 10vh;
+#inputForm {
+  width: 10vw;
+  height: 10vh;
 
-    /* align-self: flex-start; */
-  }
+  /* align-self: flex-start; */
+}
 
-  #map-container {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-  }
+#map-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0px;
+  z-index: 1;
+  /* justify-content: center; */
+}
 
-  #mapView {
-    border: 1px solid black;
-    /* width: 10vw;
-    height: 10vh; */
-    /* flex-grow: 2; */
+#mapView {
+  /* width: 10vw;
+  height: 10vh; */
+  /* flex-grow: 2; */
 
-  }
+}
 
 
-  @media all and (min-width: 20vw) {
+@media all and (min-width: 20vw) {
   #form-container { flex: 1 0 0; }
 }
 @media all and (min-width: 20vw) {
-#buttons-container { flex: 1 0 0; }
+  #buttonsContainer { flex: 1 0 0; }
 }
 
-@media all and (min-width: 40vw) {
+ @media all and (min-width: 40vw) {
   #map-container    { flex: 4 0px; }
   .form-container { order: 1; }
-  .map-container   { order: 2; }
+  .map-container    { order: 2; }
   .aside-2 { order: 3; }
   .footer  { order: 4; }
 }
-
-
 </style>

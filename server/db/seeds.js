@@ -6,7 +6,7 @@ db.messages.insertMany([
     name: "Theo Wright",
     age: 8,
     country: "England",
-    flag: "",
+    flag: "https://restcountries.eu/data/afg.svg",
     message: "whoooo my favourite astronauts!"
   },
 
@@ -14,7 +14,7 @@ db.messages.insertMany([
     name: "Stelios",
     age: 35,
     country: "Cyprus",
-    flag: "",
+    flag: "https://restcountries.eu/data/afg.svg",
     message: "im miserable today"
   }
 ]);
