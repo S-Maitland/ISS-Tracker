@@ -1,8 +1,6 @@
 <template lang="html">
     <div class="message-wrapper">
-      <MessageListItem
-      v-for="message in messages"
-      v-bind:message="message" />
+      <MessageListItem v-bind:message="message" v-for="message in messages" v-if="messages"/>
     </div>
 </template>
 
@@ -14,7 +12,7 @@ import MessageService from '@/services/MessageService.js'
 export default {
   data(){
     return {
-      messages: []
+      messages: null
     };
   },
   mounted(){

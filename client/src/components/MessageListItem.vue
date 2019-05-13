@@ -2,7 +2,7 @@
   <div class="message-card">
     <p>Name: {{ message.name }}</p>
     <p>Age: {{ message.age }}</p>
-    <p>Country: {{ message.selectedCountry.name}}</p>
+    <p>Country: {{ message.selectedCountryName}}</p>
   </div>
 </template>
 
