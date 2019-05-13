@@ -3,7 +3,7 @@
     <div id="container">
       <div id="form-container">
         <MessageList id="messageList" />
-        <InputForm id="inputForm" />
+        <FormModalButton id="inputForm" />
       </div>
       <div id="map-container">
         <MapView id="mapView" :location="location" v-if="location"/>
@@ -18,13 +18,13 @@
 <script>
 
 import ModalButtons from '@/components/ModalButtons';
-import InputForm from '@/components/InputForm';
+import FormModalButton from '@/components/FormModalButton';
 import MessageList from '@/components/MessageList';
 import MapView from '@/components/MapView';
 
 export default {
   components: {
-    ModalButtons, InputForm, MessageList, MapView
+    ModalButtons, FormModalButton, MessageList, MapView
   },
   data() {
     return {
