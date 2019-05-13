@@ -4,7 +4,7 @@
     :zoom="zoom"
     :center="center"
     :markers="marker"
-    style="height:45%">
+    style="height:96.5vh">
     <l-tile-layer
     :url="url"
     :attribution="attribution">
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      zoom: 16,
+      zoom: 3,
       center: L.latLng(this.location.iss_position.latitude,this.location.iss_position.longitude),
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
