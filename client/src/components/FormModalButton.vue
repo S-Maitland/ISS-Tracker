@@ -2,7 +2,7 @@
   <div>
     <InputForm v-if="isModalVisible"/>
     <button type="button" class="modal-btn" @click="showForm">
-      Send a message!
+      Send message!
     </button>
     <modal v-show="isModalVisible" name="formModal"/>
     </div>
@@ -28,8 +28,9 @@ export default {
     }
   },
   mounted() {
-    eventBus.$on('close', () => {
+    eventBus.$on('close5', () => {
       this.isModalVisible = false
+
     })
   }
 }

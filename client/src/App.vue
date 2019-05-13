@@ -2,6 +2,7 @@
   <div id="app">
     <Header text="ISS Tracker"/>
     <router-view id="view"/>
+
   </div>
 </template>
 
@@ -31,6 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
+
 }
 #view {
   height: 100%;
@@ -42,7 +44,10 @@ h1 {
   padding: 5vh;
   background-color: #000024;
   color: white;
+  /* background-image: url('./assets/stars.png'); */
 }
+
+
 
 
 </style>

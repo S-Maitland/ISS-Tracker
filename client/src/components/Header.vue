@@ -1,6 +1,11 @@
 <template lang="html">
   <div class="Header">
     <h1 id="header">{{text}}</h1>
+
+    <div class="scenes scene-3">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+</div>
   </div>
 </template>
 
@@ -15,4 +20,6 @@ export default {
   text-align: center;
   /* position: fixed; */
 }
+
+
 </style>
