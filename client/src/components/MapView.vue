@@ -11,7 +11,6 @@
   </l-tile-layer>
   <l-marker
   :lat-lng="marker"
-  :icon="icon"
   :draggable="false">
 </l-marker>
 </l-map>
