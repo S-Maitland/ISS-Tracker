@@ -26,13 +26,13 @@ export default {
   },
   data() {
     return {
-      zoom: 13,
-      center: L.latLng(47.413220, -1.219482),
+      zoom: 16,
+      center: L.latLng(55.8653028,-4.2600128),
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
       '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      marker: L.latLng(47.413220, -1.219482)
+      marker: L.latLng(55.8653028,-4.2600128)
     };
     }
   }
