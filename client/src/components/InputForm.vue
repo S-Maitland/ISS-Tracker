@@ -31,6 +31,7 @@
 
       <input type="submit" value="Send Message!"  id="send"  />
     </form>
+
   </template>
   </div>
 

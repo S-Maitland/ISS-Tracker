@@ -3,8 +3,8 @@
     <div id="container">
       <div id="form-container">
         <!-- <MessageList id="messageList" /> -->
-        <MessageModalButton id="messageModal" />
-        <FormModalButton id="inputForm" />
+        <MessageModalButton id="messageModal" class="left-buttons" />
+        <FormModalButton id="inputForm" class="left-buttons" />
       </div>
       <div id="map-container">
         <MapView id="mapView" :location="location" v-if="location"/>
@@ -78,7 +78,7 @@ export default {
 #form-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 0 auto;
   padding: 0px;
   /* background-color: #000024; */
@@ -92,13 +92,13 @@ export default {
 
 #messageModal {
   height: 10vh;
-
+  margin-top: 0vh;
 }
 
 #inputForm {
 
   height: 10vh;
-
+  margin-top: 45vh;
   /* align-self: flex-start; */
 }
 
@@ -116,6 +116,10 @@ export default {
   height: 10vh; */
   /* flex-grow: 2; */
   /* background-color: #000024; */
+}
+
+.left-buttons:hover {
+  
 }
 
 
