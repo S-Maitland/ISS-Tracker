@@ -107,7 +107,41 @@ export default {
 <style lang="css" scoped>
 
 
- .modal-btn {
+ /* .modal-btn {
    margin-top: 20vh;
- }
+
+ } */
+ .modal-btn {
+   display: inline-block;
+  padding: 1em 1.2em;
+border: 0.1em solid #FFFFFF;
+margin: 0 0.3em 0.3em 0;
+border-radius: 0.2em;
+box-sizing: border-box;
+text-decoration: none;
+font-family: 'Roboto', sans-serif;
+font-weight: 700;
+color: #FFFFFF;
+text-align: center;
+transition: all 0.2s;
+margin-top: 20vh;
+background-color: rgba(0,0,0,.1);
+font-size: 0.8em;
+width: 10vw;
+}
+.modal-btn:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+@media all and (max-width: 30em) {
+  .modal-btn {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+
+
 </style>
