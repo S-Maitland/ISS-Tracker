@@ -3,7 +3,6 @@
     <p><b>Name:</b> <span> {{ message.name }}</span</p>
     <p><b>Age:</b> <span> {{ message.age }}</span></p>
     <p><b>Country:</b> <span> {{ message.country}}</span></p>
-    <p>Flag: </p>
     <img :src="message.flag">
     <p><b>Message:</b> <span> {{message.message}}</span></p>
   </div>
