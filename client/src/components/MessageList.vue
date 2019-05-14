@@ -47,7 +47,7 @@ export default {
   },
   mounted(){
     MessageService.getMessage()
-    .then(messages => this.messages = messages);
+    .then(messages => this.messages = messages.reverse());
 
     eventBus.$on('message-added', (message) => {
       this.messages.push(message)

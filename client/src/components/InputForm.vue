@@ -39,7 +39,7 @@
 
       <input type="submit" value="Save Message!" id="save"  />
     </form>
-    <p>message sent!</p>
+    <!-- <p>message sent!</p> -->
   </template>
   </div>
 
