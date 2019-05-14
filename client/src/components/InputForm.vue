@@ -5,14 +5,6 @@
        <header class="modal-header">
          <slot name="header">
            Please send the astronauts a message!
-
-           <button
-             type="button"
-             class="btn-close"
-             @click="close()"
-           >
-             x
-           </button>
          </slot>
        </header>
 
@@ -35,11 +27,10 @@
         </select>
 
       <label for="message">Message:</label>
-      <input type="text" id="Your Message:" v-model="message" required/>
+      <input type="text" id="messageInput" v-model="message" required/>
 
-      <input type="submit" value="Save Message!" id="save"  />
+      <input type="submit" value="Send Message!"  id="send"  />
     </form>
-    <p>message sent!</p>
   </template>
   </div>
 
@@ -75,12 +66,9 @@ export default {
       }
     MessageService.postMessage(messageToAstronaut)
     .then(res => eventBus.$emit('message-added', res))
-
-  },
-  close() {
-    eventBus.$emit('close5');
+    .then(eventBus.$emit('close5'))
   }
-  },
+},
   mounted(){
   fetch("https://restcountries.eu/rest/v2/all")
   .then(res => res.json())
@@ -105,64 +93,22 @@ export default {
 }
 
 .modal {
-  background: #FFFFFF;
+  background-color: #252e3d;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 90vh;
-  width: 90vw;
-}
-
-.modal-header,
-.modal-footer,
-.modal-body {
-  padding: 2vw;
-  /* display: flex; */
-  width: 96%;
+  width: 40vw;
 }
 
 .modal-header {
+  padding: 2vw;
   border-bottom: 1px solid #eeeeee;
   color: #4AAE9B;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 96%;
 }
-
-.modal-footer {
-  border-top: 1px solid #eeeeee;
-  /* justify-content: flex-end; */
-}
-
-.modal-body {
-  height: 60vh;
-  /* position: relative; */
-}
-
-#list-wrapper {
-  display: flex;
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-ul {
-
-  margin: 0;
-  padding: 2em;
-}
-
-.btn-close {
-  /* display: flex; */
-  border: none;
-  font-size: 40px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #4AAE9B;
-  background: transparent;
-  justify-content: flex-end;
-}
-
 </style>

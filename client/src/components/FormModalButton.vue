@@ -27,10 +27,9 @@ export default {
       this.isModalVisible = true;
     }
   },
-  mounted() {
+  mounted(){
     eventBus.$on('close5', () => {
       this.isModalVisible = false
-
     })
   }
 }
