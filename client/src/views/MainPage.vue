@@ -67,7 +67,7 @@ export default {
 #buttons-container {
   margin: 0 auto;
   padding: 0px;
-  background-color: #000024;
+  /* background-color: #000024; */
 }
 
 #buttons {
@@ -81,7 +81,7 @@ export default {
   justify-content: space-around;
   margin: 0 auto;
   padding: 0px;
-  background-color: #000024;
+  /* background-color: #000024; */
 }
 
 #messageList {
@@ -115,7 +115,7 @@ export default {
   /* width: 10vw;
   height: 10vh; */
   /* flex-grow: 2; */
-  background-color: #000024;
+  /* background-color: #000024; */
 }
 
 
