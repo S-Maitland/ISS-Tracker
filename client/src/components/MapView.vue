@@ -1,58 +1,32 @@
 <template lang="html">
   <div class="earth">
-    <l-map
-    :zoom="zoom"
-    :center="center"
-    :markers="marker"
-    style="height:96.5vh">
-    <l-tile-layer
-    :url="url"
-    :attribution="attribution">
-  </l-tile-layer>
-  <l-marker
-  :lat-lng="marker"
-  :draggable="false">
-</l-marker>
-</l-map>
-</div>
+  </div>
 </template>
 
 <script>
 import {LMap, LTileLayer, LMarker} from 'vue2-leaflet';
 import {Icon} from 'leaflet';
 export default {
-  name: 'issMap',
+  name: 'earth',
   props: ['location'],
   components: {
     LMap,
     LTileLayer,
     LMarker
   },
-  // data() {
-  //   return {
-  //     zoom: 3,
-  //     center: L.latLng(this.location.iss_position.latitude,this.location.iss_position.longitude),
-  //     url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-  //     attribution:
-  //     'NASA',
-  //     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-  //     marker:L.latLng(this.location.iss_position.latitude,this.location.iss_position.longitude)
-  //   }
-  // }
   methods: {
-      initialize() {
-        earth: new WebGLEarth('earth_div');
-        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+    initialize() {
+      earth: new WebGLEarth('earth_div');
 
-        marker: WE.marker([51.5, -0.09]).addTo(earth);
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
+      WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.earth);
 
-        marker2: WE.marker([30.058056, 31.228889]).addTo(earth);
-        marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", {maxWidth: 120, closeButton: false});
+      marker: WE.marker([this.location.iss_position.latitude,this.location.iss_position.longitudes]).addTo(this.earth);
+      marker.bindPopup("<b>ISS</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
 
-        markerCustom: WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
+      marker2: WE.marker([30.058056, 31.228889]).addTo(this.earth);
+      marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", {maxWidth: 120, closeButton: false});
 
-        earth.setView([51.505, 0], 6);
+      this.earth.setView([51.505, 0], 6);
     }
   },
   mounted(){
