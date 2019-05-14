@@ -3,8 +3,8 @@
 
   <div id ="modal1">
     <ModalComponentOne v-bind:crew="crew" v-if="isModalVisible"/>
-    <button type="button" class="modal-btn" @click="showModal">
-      Open Modal!
+    <button type="button" class="modal-btn" @click="isModalVisible = !isModalVisible">
+      Astronauts!
     </button>
     <modal v-bind:crew="crew"  class="modal" name="bar" v-show="isModalVisible" value="yo!" />
   </div>
@@ -12,8 +12,8 @@
 
   <div id="modal2">
     <ModalComponentTwo v-bind:info="info" v-if="isModalVisible2"/>
-    <button type="button" class="modal-btn" @click="showModal2(); timerVelocity();">
-      Modal Two!
+    <button type="button" class="modal-btn" @click="isModalVisible2 = !isModalVisible2; timerVelocity();">
+      Real-Time Info!
     </button>
     <modal class="modal" name="bar" v-show="isModalVisible2"  />
   </div>
@@ -21,8 +21,8 @@
 
 <div id="modal3">
   <ModalComponentThree v-if="isModalVisible3"/>
-  <button type="button" class="modal-btn" @click="showModal3">
-    Modal Three!
+  <button type="button" class="modal-btn" @click="isModalVisible3 = !isModalVisible3">
+    More Info!
   </button>
   <modal class="modal" name="bar" v-show="isModalVisible3"  />
 </div>
@@ -56,16 +56,6 @@ export default {
     }
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    showModal2() {
-      this.isModalVisible2 = true;
-    },
-    showModal3() {
-      this.isModalVisible3 = true;
-    },
-
 
     updateVelocity() {
       axios.get('https://api.wheretheiss.at/v1/satellites/25544')

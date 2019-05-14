@@ -9,7 +9,7 @@
            <button
              type="button"
              class="btn-close"
-             @click="close"
+             @click="close()"
            >
              x
            </button>
@@ -20,7 +20,7 @@
 
   <div class="input-form">
     <template lang="html">
-    <form class="" v-on:submit="addMessage" method="post">
+    <form id="myForm" name="myForm" v-on:submit="addMessage" method="post">
 
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" required/>
@@ -37,8 +37,9 @@
       <label for="message">Message:</label>
       <input type="text" id="Your Message:" v-model="message" required/>
 
-      <input type="submit" value="Send Message!" id="save"/>
+      <input type="submit" value="Save Message!" id="save"  />
     </form>
+    <p>message sent!</p>
   </template>
   </div>
 
@@ -68,15 +69,16 @@ export default {
     const messageToAstronaut = {
       name: this.name,
       age: this.age,
-      selectedCountryName: this.selectedCountry.name,
-      selectedCountryFlag: this.selectedCountry.flag,
+      country: this.selectedCountry.name,
+      flag: this.selectedCountry.flag,
       message: this.message
       }
     MessageService.postMessage(messageToAstronaut)
     .then(res => eventBus.$emit('message-added', res))
+
   },
   close() {
-    eventBus.$emit('close');
+    eventBus.$emit('close5');
   }
   },
   mounted(){
