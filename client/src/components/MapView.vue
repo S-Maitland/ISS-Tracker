@@ -17,23 +17,20 @@ export default {
   data: function(){
     return {
       earth: null,
-      marker: null,
-      marker2: null,
+      marker: null
     }
   },
   methods: {
     initialize() {
-      this.earth = new WebGLEarth('earth_div');
+      this.earth = new WebGLEarth('earth_div', {
+        center:(this.location.iss_position.latitude, this.location.iss_position.longitude),
+        zooming: true,
+        sky: true
+      });
 
       WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.earth);
 
-      this.marker = WE.marker([this.location.iss_position.latitude,this.location.iss_position.longitudes]).addTo(this.earth);
-      this.marker.bindPopup("<b>ISS</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
-
-      this.marker2 = WE.marker([30.058056, 31.228889]).addTo(this.earth);
-      this.marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", {maxWidth: 120, closeButton: false});
-
-      this.earth.setView([51.505, 0], 6);
+      this.marker = WE.marker([this.location.iss_position.latitude, this.location.iss_position.longitude]).addTo(this.earth).bindPopup("<b>ISS</b>", {maxWidth: 120, closeButton: true}).openPopup();
     }
   },
   mounted(){
@@ -43,11 +40,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* .map {
-height: 100%;
-width: 100%;
-} */
-
-html, body{padding: 0; margin: 0; background-color: black;}
-#earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
 </style>
