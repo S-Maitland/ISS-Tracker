@@ -25,13 +25,17 @@ html, body, #app {
 
 body {
   margin: 0;
+  background-image: url('./assets/stars.png')
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  color: #2c3e50;
+  /* color: #2c3e50; */
+  background-image: url('./assets/stars.png')
+
+
 
 }
 #view {
@@ -42,7 +46,7 @@ h1 {
   /* height: 5vh; */
   margin: 0;
   padding: 5vh;
-  background-color: #000024;
+  /* background-color: #000024; */
   color: white;
   /* background-image: url('./assets/stars.png'); */
 }
