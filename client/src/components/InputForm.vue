@@ -39,7 +39,6 @@
 
       <input type="submit" value="Send Message!"  id="send"  />
       <p id="dateDemo"></p>
-      <button type="button" name="button" @click="getTimeAndDate">time</button>
     </form>
 
   </template>

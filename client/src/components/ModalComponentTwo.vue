@@ -17,7 +17,8 @@
        <section class="modal-body">
          <slot name="body">
            <p>The ISS is currently <b>{{info.data.altitude.toFixed(2)}} km</b> above  us and travelling at a breathtaking <b>{{info.data.velocity.toFixed(2)}} km/h</b>!!!</p>
-           <p>As it orbits around the Earth, it goes through periods of day and night just like the rest of us!  At the moment, the ISS is in<b v-if="info.data.visibility === eclipsed"> pitch black</b><b v-else> daylight</b> !!!</p>
+           <p>As it orbits around the Earth, it goes through periods of day and night just like the rest of us!</p>
+            <p>At the moment, the ISS is in<b v-if="info.data.visibility === eclipsed"> pitch black</b><b v-else> daylight</b> !!!</p>
          </slot>
         </section>
         <footer class="modal-footer">
