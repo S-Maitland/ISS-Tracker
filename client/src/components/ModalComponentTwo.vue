@@ -20,19 +20,6 @@
            <p>As it orbits around the Earth, it goes through periods of day and night just like the rest of us!  At the moment, the ISS is in<b v-if="info.data.visibility === eclipsed"> pitch black</b><b v-else> daylight</b> !!!</p>
          </slot>
         </section>
-        <footer class="modal-footer">
-           <slot name="footer">
-             I'm the default footer!
-
-             <button
-               type="button"
-               class="btn-green"
-               @click="close(); stopTimer();"
-             >
-               Close me!
-           </button>
-         </slot>
-       </footer>
      </div>
    </div>
 </template>
@@ -82,14 +69,17 @@ export default {
 
   .modal-header,
   .modal-footer {
-    padding: 15px;
-    display: flex;
+    padding: 2vw;
+    /* display: flex; */
+    width: 96%;
+    
   }
 
   .modal-header {
     border-bottom: 1px solid #eeeeee;
     color: #4AAE9B;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .modal-footer {

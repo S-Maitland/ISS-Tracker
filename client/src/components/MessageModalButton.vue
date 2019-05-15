@@ -1,21 +1,25 @@
 <template lang="html">
-  <div>
-    <InputForm v-if="isModalVisible"/>
-    <button type="button" class="modal-btn" @click="showForm">
-      Send message!
+  <div >
+
+
+    <MessageList v-if="isModalVisible"/>
+    <button type="button" class="modal-btn" @click="showModal">
+      See messages!
     </button>
-    <modal v-show="isModalVisible" name="formModal"/>
+    <modal class="modal" v-show="isModalVisible" name="messageModal"/>
+
+
     </div>
 </template>
 
 <script>
 
 import {eventBus } from '@/main.js';
-import InputForm from '@/components/InputForm';
+import MessageList from '@/components/MessageList';
 
 export default {
   components: {
-    InputForm
+    MessageList
   },
   data () {
     return {
@@ -23,12 +27,12 @@ export default {
     }
   },
   methods: {
-    showForm() {
+    showModal() {
       this.isModalVisible = true;
     }
   },
-  mounted(){
-    eventBus.$on('close5', () => {
+  mounted() {
+    eventBus.$on('close6', () => {
       this.isModalVisible = false
     })
   }
@@ -57,6 +61,6 @@ font-size: 0.8em;
  color: #000000;
  background-color: #FFFFFF;
  cursor: pointer;
- /* cursor: url('../assets/spaceship-icon-vector.png'), auto; */
 }
+
 </style>

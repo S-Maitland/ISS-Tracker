@@ -2,11 +2,13 @@
   <div id="app">
     <div id="container">
       <div id="form-container">
-        <MessageList id="messageList" />
-        <FormModalButton id="inputForm" />
+        <!-- <MessageList id="messageList" /> -->
+        <MessageModalButton id="messageModal" class="left-buttons" />
+        <FormModalButton id="inputForm" class="left-buttons" />
       </div>
       <div id="map-container">
         <MapView id="mapView" :location="location" v-if="location"/>
+        <div id="earth_div"></div>
       </div>
       <div id="buttons-container">
         <ModalButtons id="buttons" />
@@ -20,11 +22,12 @@
 import ModalButtons from '@/components/ModalButtons';
 import FormModalButton from '@/components/FormModalButton';
 import MessageList from '@/components/MessageList';
+import MessageModalButton from '@/components/MessageModalButton'
 import MapView from '@/components/MapView';
 
 export default {
   components: {
-    ModalButtons, FormModalButton, MessageList, MapView
+    ModalButtons, FormModalButton, MessageList, MessageModalButton, MapView
   },
   data() {
     return {
@@ -50,7 +53,7 @@ export default {
 <style lang="css" scoped>
 
 #container {
-  border: 5px solid green;
+
   display: flex;
   height: 100%;
   flex-wrap: row wrap;
@@ -65,19 +68,21 @@ export default {
 #buttons-container {
   margin: 0 auto;
   padding: 0px;
+  /* background-color: #000024; */
 }
 
 #buttons {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 100%;
 }
 
 #form-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 0 auto;
   padding: 0px;
+  /* background-color: #000024; */
 }
 
 #messageList {
@@ -86,10 +91,15 @@ export default {
   border: solid 1px black;
 }
 
-#inputForm {
-  width: 10vw;
+#messageModal {
   height: 10vh;
+  margin-top: 0vh;
+}
 
+#inputForm {
+
+  height: 10vh;
+  margin-top: 45vh;
   /* align-self: flex-start; */
 }
 
@@ -99,22 +109,22 @@ export default {
   margin: 0 auto;
   padding: 0px;
   z-index: 1;
-  /* justify-content: center; */
+  border: 1px dashed white;
 }
-
-#mapView {
-  /* width: 10vw;
-  height: 10vh; */
-  /* flex-grow: 2; */
+#earth_div {
+  height: 100%;
+  width: 100%;
+}
+.left-buttons:hover {
 
 }
 
 
 @media all and (min-width: 20vw) {
-  #form-container { flex: 1 0 0; }
+  #form-container { flex: 0.6 0 0; }
 }
 @media all and (min-width: 20vw) {
-  #buttonsContainer { flex: 1 0 0; }
+  #buttons-container { flex: 0.6 0 0; }
 }
 
  @media all and (min-width: 40vw) {

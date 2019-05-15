@@ -5,22 +5,21 @@
        <header class="modal-header">
          <slot name="header">
            Please send the astronauts a message!
-
-           <button
-             type="button"
-             class="btn-close"
-             @click="close"
-           >
-             x
-           </button>
          </slot>
+         <button
+           type="button"
+           class="btn-close"
+           @click="close"
+         >
+           x
+         </button>
        </header>
 
 
 
   <div class="input-form">
     <template lang="html">
-    <form class="" v-on:submit="addMessage" method="post">
+    <form id="myForm" name="myForm" v-on:submit="addMessage" method="post">
 
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" required/>
@@ -35,10 +34,12 @@
         </select>
 
       <label for="message">Message:</label>
-      <input type="text" id="Your Message:" v-model="message" required/>
+      <input type="text" id="messageInput" v-model="message" required/>
 
-      <input type="submit" value="Send Message!" id="save"/>
+      <input type="submit" value="Send Message!"  id="send"  />
+      <p id="dateDemo"></p>
     </form>
+
   </template>
   </div>
 
@@ -59,26 +60,34 @@ export default {
       name: "",
       age: null,
       selectedCountry: null,
-      message: ""
+      message: "",
+      dateStamp: ""
     }
   },
   methods: {
   addMessage(form){
     form.preventDefault()
+    this.getTimeAndDate()
     const messageToAstronaut = {
       name: this.name,
       age: this.age,
-      selectedCountryName: this.selectedCountry.name,
-      selectedCountryFlag: this.selectedCountry.flag,
-      message: this.message
+      country: this.selectedCountry.name,
+      flag: this.selectedCountry.flag,
+      message: this.message,
+      time: this.dateStamp
       }
     MessageService.postMessage(messageToAstronaut)
+    // .then(() => this.getTimeAndDate())
     .then(res => eventBus.$emit('message-added', res))
+    .then(eventBus.$emit('close5'))
+  },
+  getTimeAndDate() {
+    this.dateStamp = document.getElementById("dateDemo").innerHTML = Date();
   },
   close() {
-    eventBus.$emit('close');
-  }
+    eventBus.$emit('close5');
   },
+},
   mounted(){
   fetch("https://restcountries.eu/rest/v2/all")
   .then(res => res.json())
@@ -88,6 +97,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.my-form {
+  color: white;
+}
 
 .modal-backdrop {
   position: fixed;
@@ -103,64 +116,32 @@ export default {
 }
 
 .modal {
-  background: #FFFFFF;
+  background-color: #252e3d;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 90vh;
-  width: 90vw;
-}
-
-.modal-header,
-.modal-footer,
-.modal-body {
-  padding: 2vw;
-  /* display: flex; */
-  width: 96%;
+  width: 50vw;
 }
 
 .modal-header {
+  padding: 2vw;
   border-bottom: 1px solid #eeeeee;
   color: #4AAE9B;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.modal-footer {
-  border-top: 1px solid #eeeeee;
-  /* justify-content: flex-end; */
-}
-
-.modal-body {
-  height: 60vh;
-  /* position: relative; */
-}
-
-#list-wrapper {
-  display: flex;
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-ul {
-
-  margin: 0;
-  padding: 2em;
+  width: 96%;
 }
 
 .btn-close {
-  /* display: flex; */
   border: none;
-  font-size: 40px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 20px;
   cursor: pointer;
   font-weight: bold;
   color: #4AAE9B;
   background: transparent;
-  justify-content: flex-end;
 }
-
 </style>
