@@ -108,18 +108,11 @@ export default {
   margin: 0 auto;
   padding: 0px;
   z-index: 1;
-  /* justify-content: center; */
-}
-
-#mapView {
-  /* width: 10vw;
-  height: 10vh; */
-  /* flex-grow: 2; */
-  /* background-color: #000024; */
+  border: 1px dashed white;
 }
 
 .left-buttons:hover {
-  
+
 }
 
 

@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="earth">
+    <div id="earth_div"></div>
   </div>
 </template>
 
@@ -27,7 +28,7 @@ export default {
         zooming: true
       });
 
-      WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.earth);
+      WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg').addTo(this.earth);
 
       this.marker = WE.marker([this.location.iss_position.latitude, this.location.iss_position.longitude]).addTo(this.earth).bindPopup("<b>ISS</b>", {maxWidth: 120, closeButton: true}).openPopup();
     }
