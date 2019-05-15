@@ -32,14 +32,12 @@
           <option disabled value="">Select a country</option>
           <option v-for="country in countries" :value="country">{{country.name}}</option>
         </select>
-        <input type="text" name="" value="">
 
       <label for="message">Message:</label>
       <input type="text" id="messageInput" v-model="message" required/>
 
       <input type="submit" value="Send Message!"  id="send"  />
       <p id="dateDemo"></p>
-      <button type="button" name="button" @click="getTimeAndDate">time</button>
     </form>
 
   </template>
@@ -100,6 +98,10 @@ export default {
 
 <style lang="css" scoped>
 
+.my-form {
+  color: white;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -131,5 +133,15 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 96%;
+}
+
+.btn-close {
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #4AAE9B;
+  background: transparent;
 }
 </style>

@@ -22,14 +22,6 @@
            </ul>
          </div>
         </section>
-        <footer class="modal-footer">
-           <slot name="footer">
-             I'm the default footer!
-
-
-           </button>
-         </slot>
-       </footer>
      </div>
    </div>
 </template>
