@@ -4,7 +4,7 @@
      <div class="modal">
        <header class="modal-header">
          <slot name="header">
-           Please send the astronauts a message!
+           Please send the astronauts a message!!
          </slot>
          <button
            type="button"
@@ -28,15 +28,16 @@
       <input type="number" id="age" v-model="age" required/>
 
       <label for="country_select">Country:</label>
+      <div class="custom-select">
         <select id="country_select" v-model="selectedCountry">
           <option disabled value="">Select a country</option>
           <option v-for="country in countries" :value="country">{{country.name}}</option>
         </select>
-
+      </div>
       <label for="message">Message:</label>
       <input type="text" id="messageInput" v-model="message" required/>
 
-      <input type="submit" value="Send Message!"  id="send"  />
+      <input type="submit" id="send" value="Send Message!"/>
       <p id="dateDemo"></p>
     </form>
 
@@ -98,8 +99,11 @@ export default {
 
 <style lang="css" scoped>
 
-.my-form {
+.input-form {
   color: white;
+  width: 240px;
+  padding: 20px;
+
 }
 
 .modal-backdrop {
@@ -115,7 +119,7 @@ export default {
   z-index: 9;
   font-family: 'Russo One', sans-serif;
   letter-spacing: 0.1em;
-  font-size: 3em
+  font-size: 1em
 }
 
 .modal {
@@ -132,10 +136,11 @@ export default {
 .modal-header {
   padding: 2vw;
   border-bottom: 1px solid #eeeeee;
-  color: #4AAE9B;
+  color: orange;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 96%;
+  font-size: 1.3em
 }
 
 .btn-close {
@@ -144,7 +149,21 @@ export default {
   padding: 20px;
   cursor: pointer;
   font-weight: bold;
-  color: #4AAE9B;
+  color: red;
   background: transparent;
+}
+
+#send {
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    border:solid aqua;
+    border-radius: 12px;
 }
 </style>

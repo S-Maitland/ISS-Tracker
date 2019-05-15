@@ -5,8 +5,9 @@
     <p><b>Country:</b> <span> {{ message.country}}</span></p>
     <img :src="message.flag">
     <p><b>Message:</b> <span> {{message.message}}</span></p>
-    <br>
     <p>{{this.formatTime()}}</p>
+    <hr>
+    <br>
     <br>
 
   </div>
@@ -31,14 +32,16 @@ export default {
 
 <style lang="css" scoped>
   .message-card {
-    border: solid 1px blue;
     align-content: flex-start;
   }
+
   p {
     margin: 0;
   }
+
 img {
   height: 10vh;
   width: 10vw;
 }
+
 </style>

@@ -72,10 +72,13 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 9;
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 1em
 }
 
 .modal {
-  background: #FFFFFF;
+  background-color: #252e3d;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
   display: flex;
@@ -95,47 +98,30 @@ export default {
 
 .modal-header {
   border-bottom: 1px solid #eeeeee;
-  color: #4AAE9B;
+  color: orange;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.modal-footer {
-  border-top: 1px solid #eeeeee;
-  /* justify-content: flex-end; */
+  font-size: 1.3em
 }
 
 .modal-body {
   height: 60vh;
   /* position: relative; */
+  color: white;
 }
 
-#list-wrapper {
-  display: flex;
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
 ul {
-
   margin: 0;
-  padding: 2em;
+  padding: 0em;
 }
 
 .btn-close {
-  /* display: flex; */
   border: none;
-  font-size: 40px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 20px;
   cursor: pointer;
   font-weight: bold;
-  color: #4AAE9B;
+  color: red;
   background: transparent;
-  justify-content: flex-end;
 }
-
-
-
-
 </style>
