@@ -23,7 +23,7 @@ export default {
   methods: {
     initialize() {
       this.earth = new WebGLEarth('earth_div', {
-        center:(this.location.iss_position.latitude, this.location.iss_position.longitude),
+        center:([this.location.iss_position.latitude, this.location.iss_position.longitude]),
         zooming: true
       });
 
