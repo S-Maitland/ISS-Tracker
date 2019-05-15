@@ -85,7 +85,7 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 90vh;
-  width: 90vw;
+  width: 60vw;
 }
 
 .modal-header,
