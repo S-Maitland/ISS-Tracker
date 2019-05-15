@@ -5,13 +5,27 @@
     <p><b>Country:</b> <span> {{ message.country}}</span></p>
     <img :src="message.flag">
     <p><b>Message:</b> <span> {{message.message}}</span></p>
+    <br>
+    <p>{{this.formatTime()}}</p>
+    <br>
+
   </div>
 </template>
 
 <script>
-
+import dayjs from 'dayjs'
 export default {
-  props: ['message']
+  props: ['message'],
+  // data() {
+  //   return {
+  //     time: message.time
+  //   }
+  // }
+  methods: {
+    formatTime() {
+      return dayjs(this.message.time).format('HH:mm ddd D MMM YYYY ZZ')
+  }
+}
 }
 </script>
 

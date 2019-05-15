@@ -6,6 +6,13 @@
          <slot name="header">
            Please send the astronauts a message!
          </slot>
+         <button
+           type="button"
+           class="btn-close"
+           @click="close"
+         >
+           x
+         </button>
        </header>
 
 
@@ -25,11 +32,14 @@
           <option disabled value="">Select a country</option>
           <option v-for="country in countries" :value="country">{{country.name}}</option>
         </select>
+        <input type="text" name="" value="">
 
       <label for="message">Message:</label>
       <input type="text" id="messageInput" v-model="message" required/>
 
       <input type="submit" value="Send Message!"  id="send"  />
+      <p id="dateDemo"></p>
+      <button type="button" name="button" @click="getTimeAndDate">time</button>
     </form>
 
   </template>
@@ -52,23 +62,33 @@ export default {
       name: "",
       age: null,
       selectedCountry: null,
-      message: ""
+      message: "",
+      dateStamp: ""
     }
   },
   methods: {
   addMessage(form){
     form.preventDefault()
+    this.getTimeAndDate()
     const messageToAstronaut = {
       name: this.name,
       age: this.age,
       country: this.selectedCountry.name,
       flag: this.selectedCountry.flag,
-      message: this.message
+      message: this.message,
+      time: this.dateStamp
       }
     MessageService.postMessage(messageToAstronaut)
+    // .then(() => this.getTimeAndDate())
     .then(res => eventBus.$emit('message-added', res))
     .then(eventBus.$emit('close5'))
-  }
+  },
+  getTimeAndDate() {
+    this.dateStamp = document.getElementById("dateDemo").innerHTML = Date();
+  },
+  close() {
+    eventBus.$emit('close5');
+  },
 },
   mounted(){
   fetch("https://restcountries.eu/rest/v2/all")
