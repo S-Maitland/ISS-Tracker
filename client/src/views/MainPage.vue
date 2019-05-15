@@ -8,6 +8,7 @@
       </div>
       <div id="map-container">
         <MapView id="mapView" :location="location" v-if="location"/>
+        <div id="earth_div"></div>
       </div>
       <div id="buttons-container">
         <ModalButtons id="buttons" />
@@ -110,7 +111,10 @@ export default {
   z-index: 1;
   border: 1px dashed white;
 }
-
+#earth_div {
+  height: 100%;
+  width: 100%;
+}
 .left-buttons:hover {
 
 }

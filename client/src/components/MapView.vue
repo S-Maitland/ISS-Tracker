@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="earth">
-    <div id="earth_div"></div>
   </div>
 </template>
 
