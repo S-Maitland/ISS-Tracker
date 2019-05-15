@@ -73,9 +73,13 @@ export default {
   }
 
   .modal-header,
+  .modal-body,
   .modal-footer {
     padding: 15px;
     display: flex;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 3em
   }
 
   .modal-header {
