@@ -24,8 +24,7 @@ export default {
     initialize() {
       this.earth = new WebGLEarth('earth_div', {
         center:(this.location.iss_position.latitude, this.location.iss_position.longitude),
-        zooming: true,
-        sky: true
+        zooming: true
       });
 
       WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.earth);
