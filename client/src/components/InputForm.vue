@@ -15,7 +15,8 @@
          </button>
        </header>
 
-
+<br>
+<br>
 
   <div class="input-form">
     <template lang="html">
@@ -23,20 +24,23 @@
 
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" required/>
-
+      <br>
+      <br>
       <label for="age">Age:</label>
       <input type="number" id="age" v-model="age" required/>
-
+      <br>
+      <br>
       <label for="country_select">Country:</label>
       <div class="custom-select">
         <select id="country_select" v-model="selectedCountry">
-          <option disabled value="">Select a country</option>
           <option v-for="country in countries" :value="country">{{country.name}}</option>
         </select>
       </div>
+      <br>
       <label for="message">Message:</label>
       <input type="text" id="messageInput" v-model="message" required/>
-
+      <br>
+      <br>
       <input type="submit" id="send" value="Send Message!"/>
       <p id="dateDemo"></p>
     </form>
@@ -101,9 +105,7 @@ export default {
 
 .input-form {
   color: white;
-  width: 240px;
-  padding: 20px;
-
+  width: 400px;
 }
 
 .modal-backdrop {
@@ -165,5 +167,16 @@ export default {
     font-size: 1em;
     border:solid aqua;
     border-radius: 12px;
+}
+
+#messageInput{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#age{
+  width:9%;
 }
 </style>
