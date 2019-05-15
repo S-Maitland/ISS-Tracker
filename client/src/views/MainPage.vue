@@ -109,7 +109,6 @@ export default {
   margin: 0 auto;
   padding: 0px;
   z-index: 1;
-  border: 1px dashed white;
 }
 #earth_div {
   height: 100%;
