@@ -1,6 +1,7 @@
 <template lang="html">
   <div id="list-container">
     <li>{{member.name}}</li>
+    <br>
   </div>
 </template>
 
