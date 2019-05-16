@@ -57,15 +57,14 @@ export default {
   },
   methods: {
 
+    //info about velocity, altitude,etc
+    //axios same as fetch just no need to convert to json
     updateVelocity() {
       axios.get('https://api.wheretheiss.at/v1/satellites/25544')
       .then(info => this.info = info)
     },
 
-    // timerVelocity() {
-    //   this.updateVelocity();
-    //   setInterval(() => this.updateVelocity(), 1000);
-    // }
+
 
     timerVelocity() {
       this.updateVelocity()
@@ -88,13 +87,12 @@ export default {
       this.isModalVisible3 = false
     }),
 
+//astronauts currently on iss
     fetch('http://api.open-notify.org/astros.json')
     .then(response => response.json())
     .then(crew => this.crew = crew);
 
-    // fetch('https://api.wheretheiss.at/v1/satellites/25544')
-    // .then(response => response.json())
-    // .then(info => this.info = info);
+
 
     eventBus.$on('closeTimer', () => {
       clearInterval(this.timer)
