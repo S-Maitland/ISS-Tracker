@@ -1,0 +1,24 @@
+{
+  "name": "iss_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "leaflet": "^1.5.1",
+    "vue2-leaflet": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S-Maitland/ISS-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S-Maitland/ISS-Tracker/issues"
+  },
+  "homepage": "https://github.com/S-Maitland/ISS-Tracker#readme"
+}
