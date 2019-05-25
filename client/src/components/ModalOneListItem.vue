@@ -10,6 +10,7 @@ export default {
   name: 'modal-one-item',
   props: ['member'] ,
 }
+//hello
 </script>
 
 <style lang="css" scoped>
