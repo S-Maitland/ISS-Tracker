@@ -1,27 +1,25 @@
 <template lang="html">
   <div class="modal-backdrop">
-     <div class="modal">
-       <header class="modal-header">
-         <slot name="header">
-           This is modal three!!
+    <div class="modal">
+      <header class="modal-header">
+        <slot name="header">
+          <button
+          type="button"
+          class="btn-close"
+          @click="close"
+          >x
+        </button>
+      </slot>
+    </header>
+    <section class="modal-body">
+      <slot name="body">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4993sBLAzGA?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-           <button
-             type="button"
-             class="btn-close"
-             @click="close"
-           >
-             x
-           </button>
-         </slot>
-       </header>
-       <section class="modal-body">
-         <slot name="body">
-           This is modal 3!
-         </slot>
-        </section>
+      </slot>
+    </section>
 
-     </div>
-   </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -59,8 +57,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 45vh;
-  width: 90vw;
+  height: 0 auto;
+  width: 0 auto;
   font-family: 'Russo One', sans-serif;
   letter-spacing: 0.1em;
   font-size: 1em
@@ -69,9 +67,8 @@ export default {
 .modal-header,
 .modal-footer,
 .modal-body {
-  padding: 2vw;
-  /* display: flex; */
-  width: 96%;
+  width: 0 auto;
+  height: 0 auto;
 }
 
 .modal-header {
@@ -83,7 +80,7 @@ export default {
 }
 
 .modal-body {
-  height: 60vh;
+  height: 80vh;
   color: white;
 }
 
