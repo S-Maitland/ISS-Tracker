@@ -3,8 +3,10 @@
     <div id="container">
       <div id="form-container">
         <!-- <MessageList id="messageList" /> -->
-        <MessageModalButton id="messageModal" class="left-buttons" />
-        <FormModalButton id="inputForm" class="left-buttons" />
+        <!-- <MessageModalButton id="messageModal" class="left-buttons" /> -->
+        <!-- <FormModalButton id="inputForm" class="left-buttons" /> -->
+        <a class="twitter-timeline" data-lang="en" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/Space_Station?ref_src=twsrc%5Etfw">Tweets by Space_Station</a>
+
       </div>
       <div id="map-container">
         <MapView id="mapView" :location="location" v-if="location"/>
