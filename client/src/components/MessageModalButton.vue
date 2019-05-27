@@ -1,14 +1,10 @@
 <template lang="html">
   <div >
-
-
     <MessageList v-if="isModalVisible"/>
     <button type="button" class="modal-btn" @click="showModal">
       See messages!
     </button>
     <modal class="modal" v-show="isModalVisible" name="messageModal"/>
-
-
     </div>
 </template>
 
