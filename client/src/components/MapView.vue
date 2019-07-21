@@ -32,7 +32,7 @@ export default {
       this.earth.setView([this.location.iss_position.latitude, this.location.iss_position.longitude], 2.5);
 
       // add an overlay tile to the earth object
-      WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg').addTo(this.earth);
+      WE.tileLayer('https://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg').addTo(this.earth);
 
       // Drop a pin to show where the ISS currently is based on live co-ordinates form // API fetch
       this.marker = WE.marker([this.location.iss_position.latitude, this.location.iss_position.longitude]).addTo(this.earth).bindPopup("<b>ISS</b>", {maxWidth: 20, closeButton: true}).openPopup();

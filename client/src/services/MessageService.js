@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/messages/'
+const baseURL = 'https://localhost:3000/api/messages/'
 
 export default {
 

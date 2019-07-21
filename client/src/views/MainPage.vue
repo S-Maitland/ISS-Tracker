@@ -43,7 +43,7 @@ export default {
 
 
 
-    // fetch('http://localhost:3000/api/messages/')
+    // fetch('https://localhost:3000/api/messages/')
     // .then(response => response.json())
     // .then(messages => this.messages = messages);
   }
