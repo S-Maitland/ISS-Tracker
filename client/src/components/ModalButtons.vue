@@ -88,7 +88,7 @@ export default {
     }),
 
 //astronauts currently on iss
-    fetch('http://api.open-notify.org/astros.json')
+    fetch('https://api.open-notify.org/astros.json')
     .then(response => response.json())
     .then(crew => this.crew = crew);
 
